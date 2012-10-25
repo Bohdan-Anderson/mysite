@@ -1,0 +1,19 @@
+{% extends "base2.html" %}
+
+{% block content %}
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width = {{width}} height = {{height}} >
+	<polyline fill="none" stroke="blue" stroke-width="1" points = "
+	{% for i in data %}
+{{i.0}},{{i.1}} 
+	{% endfor %}
+	"/>
+</svg>
+
+    <form action="" method="get">
+		Number of points<input type="range"  name="size" min="1" max="100" value = {{pastsize}}><br>
+		Width/this value<input type="range" name="scale" min="1" max="100" value = {{pastscale}}><br>
+		PI/this value<input type="range" name="incraments" min="1" max="120" value = {{pastincraments}} > <br>
+		<input type="submit" value = "press me">
+	</form>
+	
+{% endblock %}

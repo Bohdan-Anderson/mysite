@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %} Directories {% endblock %}
+{% block showTitle %} Directories {% endblock %}
+
+{% block content %}
+<ul>
+	{% for x in directories %}
+		<li>{{ x.0 }}</li>
+		<ul>
+		{% for y in x.1 %}
+			<li>{{ y.0 }}</li>
+			<ul>
+			{% for z in y.1 %}
+				<li>{{ z.0 }}</li>
+			{% endfor %}
+			</ul>
+		{% endfor %}
+		</ul>
+	{% empty %}
+		<li> there was nothing passed </li>
+	{% endfor %}
+	
+</ul>
+{% endblock %}

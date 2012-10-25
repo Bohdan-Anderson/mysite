@@ -1,0 +1,13 @@
+<p>You search for : <strong>{{ query }} </strong></p>
+
+{% if trips %} 
+	<p> Found {{ trips|length}} walk{{ trips|pluralize}}.</p>
+		<ul>
+			{% for trip in trips %}
+			<li> {{trip.name}}</li>
+			{% endfor %}
+			
+		</ul>
+{% endif %}
+
+<a href="http://127.0.0.1:8000/search-form/"> Back to Search</a>
